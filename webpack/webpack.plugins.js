@@ -3,7 +3,6 @@
 const path = require('path')
 const resolve = dir => path.join(__dirname, '..', dir)
 const webpack = require('webpack')
-
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const {
   VueLoaderPlugin
@@ -29,10 +28,10 @@ module.exports.vueLoaderPlugin = function () {
   }
 }
 
-module.exports.defineWebpackPlugin = function () {
+module.exports.defineWebpackPlugin = function (options) {
   return {
     plugins: [
-      new webpack.DefinePlugin({
+      new webpack.DefinePlugin(Object.assign({}, {
         /**
          * 为了在最终的打包中获取正确的tree-shaking配置，
          * 3.0开始需要定义赋值两个全局变量__VUE_OPTIONS_API__，__VUE_PROD_DEVTOOLS__
@@ -43,7 +42,7 @@ module.exports.defineWebpackPlugin = function () {
         __VUE_OPTIONS_API__: true,
         // 在生产环境中启用/禁用devtools支持，默认为false
         __VUE_PROD_DEVTOOLS__: false,
-      })
+      }, options.env || {}))
     ]
   }
 }

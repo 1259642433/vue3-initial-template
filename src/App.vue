@@ -14,6 +14,7 @@ export default {
     mounted(){
         console.log('__VUE_OPTIONS_API__',__VUE_OPTIONS_API__)
         console.log('__VUE_PROD_DEVTOOLS__',__VUE_PROD_DEVTOOLS__)
+        console.log('process.env',process.env)
     }
 }
 </script>

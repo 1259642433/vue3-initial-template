@@ -1,5 +1,4 @@
 // webpack 通用配置
-
 const path = require('path')
 const resolve = dir => path.join(__dirname, '..', dir)
 const {
@@ -7,8 +6,7 @@ const {
 } = require('webpack-merge')
 const {
   htmlWebpackPlugin,
-  vueLoaderPlugin,
-  defineWebpackPlugin
+  vueLoaderPlugin
 } = require('./webpack.plugins')
 const {
   vueLoader,
@@ -16,7 +14,7 @@ const {
 } = require('./webpack.rules')
 
 module.exports = merge({
-  // mode: 'development'
+  // mode: 'development', 根据dotenv引入的配置文件定义的NODE_ENV变动
   // process.env.NODE_ENV === 'development' ? 'web' : 'browserslist',
   target: 'web',
   entry: resolve('./src/main.js'),
@@ -24,4 +22,4 @@ module.exports = merge({
     path: resolve('dist'),
     filename: 'js/[name].js' // 静态资源文件名
   }
-}, htmlWebpackPlugin(), vueLoaderPlugin(),defineWebpackPlugin(), vueLoader, cssLoader,)
+}, htmlWebpackPlugin(), vueLoaderPlugin(), vueLoader, cssLoader)

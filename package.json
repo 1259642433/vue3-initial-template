@@ -5,7 +5,7 @@
   "author": "U.amazing",
   "license": "ISC",
   "scripts": {
-    "serve": "webpack serve --env mode=development",
+    "serve": "webpack serve --env mode=debug",
     "build": "webpack --env mode=production"
   },
   "dependencies": {
@@ -15,6 +15,7 @@
     "@vue/compiler-sfc": "^3.1.5",
     "css-loader": "^6.2.0",
     "dart-sass": "^1.25.0",
+    "dotenv": "^10.0.0",
     "html-webpack-plugin": "^5.3.2",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.2.1",
