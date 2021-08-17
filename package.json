@@ -1,0 +1,27 @@
+{
+  "name": "vue3-initial-template",
+  "version": "1.0.0",
+  "description": "基于webpack5, vue3自搭建初始模板",
+  "author": "U.amazing",
+  "license": "ISC",
+  "scripts": {
+    "serve": "webpack serve --env mode=development",
+    "build": "webpack --env mode=production"
+  },
+  "dependencies": {
+    "vue": "^3.1.5"
+  },
+  "devDependencies": {
+    "@vue/compiler-sfc": "^3.1.5",
+    "css-loader": "^6.2.0",
+    "dart-sass": "^1.25.0",
+    "html-webpack-plugin": "^5.3.2",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.2.1",
+    "vue-loader": "^16.3.3",
+    "webpack": "^5.47.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.8.0"
+  }
+}
